@@ -9,7 +9,7 @@ int BDD::num_carte_Clients(int numero_carte_ins){
 
 	//BDD
 	int nb_clients=2; 	// variable contenant le nombre de client
-	int BDD_num_tab[2]={7,13}; //tableau avec tous les numéros de carte enregistre
+	int BDD_num_tab[2]={7,4}; //tableau avec tous les numéros de carte enregistre
 				//ATTENTION il faut mettre le nombre de client total (pas un variable)
 	
 
@@ -44,12 +44,9 @@ int BDD::num_carte_Clients(int numero_carte_ins){
 int BDD::code_Clients(int id){
 	int verif_code = -1;
 	int code_entre;
-	int millieme_code;
-	int centieme_code;
-	int dizieme_code;
-	int unite_code;
+	int tab_code_entre[4];
 
-	int teste_BDD_code_tab[2][4]={{1,2,3,4},{0,0,3,4}};
+//	int teste_BDD_code_tab[2][4]={{1,2,3,4},{0,0,3,4}};
 	int BDD_code_tab[2][4]={{1,2,3,4},{0,0,3,4}}; //Code enregistré
 	
 	for(int nb_test=0;nb_test < 3; nb_test++){		
@@ -57,30 +54,35 @@ int BDD::code_Clients(int id){
 	
 	scanf("%d",&code_entre);
 	
-	millieme_code = code_entre/1000;
+	//Pour avoir le code dans un tableau
+	tab_code_entre[0] = code_entre/1000;
+	tab_code_entre[1] = (code_entre-(tab_code_entre[0]*1000))/100;
+	tab_code_entre[2] = (code_entre-(tab_code_entre[0]*1000+tab_code_entre[1] *100))/10;
+	tab_code_entre[3] = code_entre-tab_code_entre[0]*1000-tab_code_entre[1] *100 - tab_code_entre[2] * 10;
 
-	centieme_code = (code_entre-(millieme_code*1000))/100;
 
-	cout<<"code enregistre m="<<"c="<<centieme_code<<"\n\n"<<endl;
-
-	dizieme_code = (code_entre-(millieme_code*1000+centieme_code *100))/10;
-	unite_code = code_entre-millieme_code*1000-centieme_code *100 - dizieme_code * 10;
-	
-	cout<<"code enregistre m="<<millieme_code<<"c="<<centieme_code<<"d="<<dizieme_code<<"u="<<unite_code<<"\n\n"<<endl;
 
 	for(int i=0; i <= 3; i++){
-		if (teste_BDD_code_tab[id-1][i]== BDD_code_tab[id-1][i]){
+		if (tab_code_entre[i]== BDD_code_tab[id-1][i]){
 			verif_code = 1;
 		}
 		else{
 			verif_code = 0;	
 			i=3;		
-			
-		}
+		} 
+
 	}
+	
+	if(verif_code==1){
+		nb_test = 3; //le code est correct on sort de de la boucle for
+		cout << "le code est correct " <<"\n\n\n\n"<<endl;
+	} 
+	else{
+		cout << "le code est incorrect " <<"\n\n\n\n"<<endl;
+}
 
 }
-	cout << "verif_code " << verif_code <<"\n\n\n\n"<<endl;
+	
 	return verif_code;
 }
 
