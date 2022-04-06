@@ -1,0 +1,24 @@
+#include "prise.h"
+
+
+entrees *io_p;
+int shmid_p;
+
+void Prise::initialiser()
+{
+io_p=acces_memoire(&shmid_p);
+if(io_p==NULL)
+cout<<"erreur pas de mem sh \n";
+led_trappe=OFF;
+led_trappe<<io_p; 
+}
+void Prise::set_trappe(led color)
+{
+led_trappe=color;
+led_trappe<<io_p; 
+}
+void Prise:: set_prise(led color)
+{
+led_prise=color;
+led_prise<<io_p; 
+}

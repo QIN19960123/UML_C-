@@ -9,7 +9,7 @@ int BDD::num_carte_Clients(int numero_carte_ins){
 
 	//BDD
 	int nb_clients=2; 	// variable contenant le nombre de client
-	int BDD_num_tab[2]={7,4}; //tableau avec tous les numéros de carte enregistre
+	int BDD_num_tab[2]={7,8}; //tableau avec tous les numéros de carte enregistre
 				//ATTENTION il faut mettre le nombre de client total (pas un variable)
 	
 
