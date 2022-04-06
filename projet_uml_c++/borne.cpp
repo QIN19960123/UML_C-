@@ -6,10 +6,12 @@
 
 int main()
 {
- initialisations_ports();
+ 	
+	//initialisations_ports();
 
-    LecteurCarte lecteurcarte;
-  
+	LecteurCarte lecteurcarte;
+
+  	lecteurcarte.initialiser();
 //  lecteurcarte.LecteurCarte_init();
 
     while (1)

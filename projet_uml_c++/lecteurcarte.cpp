@@ -1,14 +1,18 @@
 
 #include "lecteurcarte.h"
 
-void LecteurCarte::LecteurCarte_init(){
-bouton.Bouton_initialiser();
+void LecteurCarte::initialiser(){
+
+	initialisations_ports();
+	voyant.Voyants_initialiser();
 }
+
+
 /*
 LecteurCarte::LecteurCarte{
  initialisations_ports();
-}
-*/
+}*/
+
 
 void LecteurCarte::lire_carte()
 {
@@ -31,17 +35,17 @@ void LecteurCarte::lire_carte()
 			if(verif_code_bdd == 1){
 
 /////////////////Connection à la borne ///////////////////////
-/*
+
 				for(int i=0 ; i<8 ; i++)
 					{	
-						voyant.Voyants_set_charge(VERT);
-						usleep(500000);	
-						voyant.Voyants_set_charge(OFF);
-						usleep(500000);	
+					voyant.Voyants_set_charge(VERT);
+					usleep(500000);	
+					voyant.Voyants_set_charge(OFF);
+					usleep(500000);	
 					}
 
 
-*/
+
 
 			}
 			else {

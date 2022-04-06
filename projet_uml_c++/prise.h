@@ -1,13 +1,10 @@
-#ifndef PRISE_H 
+#ifndef PRISE_H //VERIFER SI ERREUR
 #define PRISE_H
 #include "lcarte.h"
 #include "memoire_borne.h"
 #include "donnees_borne.h"
-#include <iostream>
 
-using namespace std;
-
-class Prise
+class prise
 {
   public : 
 	void initialiser();
