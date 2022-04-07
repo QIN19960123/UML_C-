@@ -2,7 +2,8 @@
 #include "lecteurcarte.h"
 int attente = 60;
 
-
+int stop_moitier = 1;
+int verfication_bouton=0;
 void LecteurCarte::initialiser(){
 
 	initialisations_ports();
@@ -65,14 +66,19 @@ void LecteurCarte::lire_carte()
 					generateur_save.Generateursave_charge();
 					//cout<<"1 "<<endl;
 						}
-					//verfication_bouton=1;
-}
-					
+					verfication_bouton=1;
+					}
+					else if(timer.time_valeur() == attente/2 && stop_moitier == 1)
+						{
+						cout<<"il vous reste 30sec pour appuyer sur le bouton CHARGE\n"<<endl;
+						stop_moitier=0;
+							}
 					
 					
 					
 					//cout<<"timer.time_valeur()"<<endl;
 				}
+					cout<<"time fin\n"<<endl;
 			}
 			else {
 				cout<<"Vous fait trop de tentative \n Votre compte vas être bloqué\n\n\n\n\n\n"<<endl;
