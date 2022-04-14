@@ -1,3 +1,12 @@
+/**
+ * @file base_clients.cpp
+ * Fichier avec toute les données sur les clients
+ * @author MAZARGUIL Marlon
+ * @author QIN Xiaotong
+ * date 14/02/2022
+ * @version 1.0
+ */
+
 #include "base_clients.h"
 #include <iomanip>
 #include <fstream>

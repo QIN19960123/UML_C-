@@ -1,3 +1,12 @@
+/**
+ * @file borne.cpp
+ * Fichier principal du programme
+ * @author MAZARGUIL Marlon
+ * @author QIN Xiaotong
+ * date 14/02/2022
+ * @version 1.0
+ */
+
 #include <iostream>
 #include "memoire_borne.h"
 #include "donnees_borne.h"
