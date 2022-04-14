@@ -10,13 +10,15 @@
 #include "timer.h"
 #include "Bouton.h"
 #include "prise.h"
+#include "base_clients.h"
+
 using namespace std;
 
 class Generateur_save
 {
 public:
 	void Generateursave_initialiser();
-	void Generateursave_charge();
+	void Generateursave_charge(int num_carte);
 	void Generateursave_generer_PWM(pwm etat_pwm);
 	Voyant voyant;
 	Timer timer;
