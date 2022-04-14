@@ -13,6 +13,7 @@ class BDD
 	//BDD_clients();
 	int num_carte_Clients(int numero_carte_ins);
 	int code_Clients(int numero_carte_ins);
+	int carte_admin();
 };
 
 

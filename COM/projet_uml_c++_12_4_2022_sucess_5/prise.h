@@ -1,9 +1,11 @@
 #ifndef PRISE_H 
 #define PRISE_H
 #include "lcarte.h"
+#include <iostream>
 #include "memoire_borne.h"
 #include "donnees_borne.h"
-#include <iostream>
+
+using namespace std;
 
 class Prise
 {

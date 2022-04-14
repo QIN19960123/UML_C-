@@ -1,19 +1,36 @@
 #include "base_clients.h"
-
+#include <iomanip>
+#include <fstream>
 
 int BDD::num_carte_Clients(int numero_carte_ins){
 	int id=0;
 	int verif_BDD = 0;  	//variable qui sert à verifier 
 				//si la carte est enregistré (0 = pas enregistré, 1 = enregistré)	
-	
+	ifstream myfile("/home/m1eea_181/Documents/projet_uml_c++_12_4_2022_sucess_5/B_C.txt");
+	if(!myfile){
+		cout<< "Unable to open myfile"<<endl;
+}
+
 
 	//BDD
-	int nb_clients=2; 	// variable contenant le nombre de client
-	int BDD_num_tab[2]={7,13}; //tableau avec tous les numéros de carte enregistre
+	int nb_clients; 	// variable contenant le nombre de client
+	int BDD_num_tab[100]; //tableau avec tous les numéros de carte enregistre
 				//ATTENTION il faut mettre le nombre de client total (pas un variable)
-	
-
-
+	char buffer[256];
+	int a,b;
+	//int data[2][2];
+	int i=0;
+	while(! myfile.eof())
+	{
+		myfile.getline(buffer,10);
+		sscanf(buffer,"%d %d",&a,&b);
+		cout<<a<<" "<<b<<endl;
+		BDD_num_tab[i]=a;
+		//data[i][1]=b;
+		i++;
+	}
+	nb_clients = i;
+	cout<< nb_clients <<endl;
 				/*
 				EXPLICATION boucle FOR
 				On parcour tout le tableau contenant 
@@ -44,34 +61,64 @@ int BDD::num_carte_Clients(int numero_carte_ins){
 int BDD::code_Clients(int id){
 	int verif_code = -1;
 	int code_entre;
-	int tab_code_entre[4];
+	//int tab_code_entre[4];
+	ifstream myfile("/home/m1eea_181/Documents/projet_uml_c++_12_4_2022_sucess_5/B_C.txt");
+	if(!myfile){
+		cout<< "Unable to open myfile"<<endl;
+	}
+
 
 //	int teste_BDD_code_tab[2][4]={{1,2,3,4},{0,0,3,4}};
-	int BDD_code_tab[2][4]={{1,2,3,4},{0,0,3,4}}; //Code enregistré
+	int BDD_code_tab[100] ;//={1234,0034}; //Code enregistré
+
+	char buffe[256];
+	int a,b;
+	//int data[2][2];
+	int i=0;
+
+	while(! myfile.eof())
+	{
+		myfile.getline(buffe,10);
+		sscanf(buffe,"%d %d",&a,&b);
+		cout<<a<<" "<<b<<endl;
+		//BDD_num_tab[0]=a;
+		BDD_code_tab[i]=b;
+		i++;
+	}
 	
 	for(int nb_test=0;nb_test < 3; nb_test++){		
 	cout<< "rentrez votre code: "<<endl;
 	
 	scanf("%d",&code_entre);
+/*	
+while(1){
+if(code_entre>9999 | code_entre<999 )
+	{
+cout<<"entrez un code de 4 nb svp"<<endl;
+scanf("%d",&code_entre);
+
+	}
+else break;
+}	
 	
 	//Pour avoir le code dans un tableau
-	tab_code_entre[0] = code_entre/1000;
+	/*tab_code_entre[0] = code_entre/1000;
 	tab_code_entre[1] = (code_entre-(tab_code_entre[0]*1000))/100;
 	tab_code_entre[2] = (code_entre-(tab_code_entre[0]*1000+tab_code_entre[1] *100))/10;
-	tab_code_entre[3] = code_entre-tab_code_entre[0]*1000-tab_code_entre[1] *100 - tab_code_entre[2] * 10;
+	tab_code_entre[3] = code_entre-tab_code_entre[0]*1000-tab_code_entre[1] *100 - tab_code_entre[2] * 10;*/
 
 
 
-	for(int i=0; i <= 3; i++){
-		if (tab_code_entre[i]== BDD_code_tab[id-1][i]){
+	
+		if (code_entre== BDD_code_tab[id-1]){
 			verif_code = 1;
 		}
 		else{
 			verif_code = 0;	
-			i=3;		
+					
 		} 
 
-	}
+	
 	
 	if(verif_code==1){
 		nb_test = 3; //le code est correct on sort de de la boucle for
@@ -84,6 +131,10 @@ int BDD::code_Clients(int id){
 }
 	
 	return verif_code;
+}
+
+int BDD::carte_admin(int id){
+	
 }
 
 
