@@ -1,0 +1,98 @@
+\hypertarget{class_generateur__save}{}\doxysection{Generateur\+\_\+save Class Reference}
+\label{class_generateur__save}\index{Generateur\_save@{Generateur\_save}}
+
+
+{\ttfamily \#include $<$Generateur\+\_\+save.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_generateur__save_a8d7b5188902d00aec3b3f7413a91efd7}{Generateursave\+\_\+initialiser}} ()
+\begin{DoxyCompactList}\small\item\em Initialise le generateur et le met à l\textquotesingle{}arrêt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_generateur__save_ad24b74292650b602614e42ed4d29597d}{Generateursave\+\_\+generer\+\_\+\+PWM}} (pwm etat\+\_\+pwm)
+\begin{DoxyCompactList}\small\item\em Permet de changer la valeur du générateur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_generateur__save_a122464fcb07d52f0446ac424bd80f034}{Generateursave\+\_\+charge}} (int num\+\_\+carte)
+\begin{DoxyCompactList}\small\item\em Permet de charger la voiture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_generateur__save_a911a6e3097a9a8321f3c3488efe9b7dc}\label{class_generateur__save_a911a6e3097a9a8321f3c3488efe9b7dc}} 
+\mbox{\hyperlink{class_voyant}{Voyant}} {\bfseries voyant}
+\item 
+\mbox{\Hypertarget{class_generateur__save_a356b8acfdae18fb188a6dbd2b5bfac25}\label{class_generateur__save_a356b8acfdae18fb188a6dbd2b5bfac25}} 
+\mbox{\hyperlink{class_timer}{Timer}} {\bfseries timer}
+\item 
+\mbox{\Hypertarget{class_generateur__save_a3f11f55243b1af97a2c5451c05175a99}\label{class_generateur__save_a3f11f55243b1af97a2c5451c05175a99}} 
+\mbox{\hyperlink{class_bouton}{Bouton}} {\bfseries bouton}
+\item 
+\mbox{\Hypertarget{class_generateur__save_accd75ca0b7c385bc459d627803c18eb4}\label{class_generateur__save_accd75ca0b7c385bc459d627803c18eb4}} 
+\mbox{\hyperlink{class_prise}{Prise}} {\bfseries prise}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represente les classes en rapport avec le générateur 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_generateur__save_a122464fcb07d52f0446ac424bd80f034}\label{class_generateur__save_a122464fcb07d52f0446ac424bd80f034}} 
+\index{Generateur\_save@{Generateur\_save}!Generateursave\_charge@{Generateursave\_charge}}
+\index{Generateursave\_charge@{Generateursave\_charge}!Generateur\_save@{Generateur\_save}}
+\doxysubsubsection{\texorpdfstring{Generateursave\_charge()}{Generateursave\_charge()}}
+{\footnotesize\ttfamily Generateur\+\_\+save\+::\+Generateursave\+\_\+charge (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+carte }\end{DoxyParamCaption})}
+
+
+
+Permet de charger la voiture. 
+
+\begin{DoxyNote}{Note}
+Machine à état charger la voiture~\newline
+ On récupére le numéro de la carte pour vérifier que le client qui veut retirer le véhicule est le même qui la mit à charger 
+\end{DoxyNote}
+\begin{DoxyAttention}{Attention}
+On a mit usleep(100000) pour attendre 0,1sec ~\newline
+ Car la machine a état s\textquotesingle{}éxécute trop vite pour la simulation ~\newline
+ Et on a pas le temps de chager la valeur du générateur 
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+carte} & numéro de la carte qu\textquotesingle{}on à inséré \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_generateur__save_ad24b74292650b602614e42ed4d29597d}\label{class_generateur__save_ad24b74292650b602614e42ed4d29597d}} 
+\index{Generateur\_save@{Generateur\_save}!Generateursave\_generer\_PWM@{Generateursave\_generer\_PWM}}
+\index{Generateursave\_generer\_PWM@{Generateursave\_generer\_PWM}!Generateur\_save@{Generateur\_save}}
+\doxysubsubsection{\texorpdfstring{Generateursave\_generer\_PWM()}{Generateursave\_generer\_PWM()}}
+{\footnotesize\ttfamily Generateur\+\_\+save\+::\+Generateursave\+\_\+generer\+\_\+\+PWM (\begin{DoxyParamCaption}\item[{pwm}]{etat\+\_\+pwm }\end{DoxyParamCaption})}
+
+
+
+Permet de changer la valeur du générateur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em etat\+\_\+pwm} & STOP pour arrêt le générateur~\newline
+ DC pour un signal continu ~\newline
+ AC\+\_\+1K pour un signal PWM de fréquence 1k\+Hz ~\newline
+ AC\+\_\+\+CL pour un signal PWM de 1k\+Hz à rapport cyclique variable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_generateur__save_a8d7b5188902d00aec3b3f7413a91efd7}\label{class_generateur__save_a8d7b5188902d00aec3b3f7413a91efd7}} 
+\index{Generateur\_save@{Generateur\_save}!Generateursave\_initialiser@{Generateursave\_initialiser}}
+\index{Generateursave\_initialiser@{Generateursave\_initialiser}!Generateur\_save@{Generateur\_save}}
+\doxysubsubsection{\texorpdfstring{Generateursave\_initialiser()}{Generateursave\_initialiser()}}
+{\footnotesize\ttfamily Generateur\+\_\+save\+::\+Generateursave\+\_\+initialiser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise le generateur et le met à l\textquotesingle{}arrêt. 
+
+\begin{DoxyNote}{Note}
+Met gene\+\_\+pwo à STOP ~\newline
+ Lance l\textquotesingle{}initialisation de la prise 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/marlo/\+Desktop/\+Universite\+\_\+de\+\_\+\+Toulouse/\+M1 SME/\+S8/\+Realisation\+\_\+systeme\+\_\+cpp/\+UML\+\_\+\+C-\//\+MAZARGUIL/projet\+\_\+uml\+\_\+c++\+\_\+12\+\_\+4\+\_\+2022\+\_\+sucess\+\_\+6/\mbox{\hyperlink{_generateur__save_8h}{Generateur\+\_\+save.\+h}}\item 
+C\+:/\+Users/marlo/\+Desktop/\+Universite\+\_\+de\+\_\+\+Toulouse/\+M1 SME/\+S8/\+Realisation\+\_\+systeme\+\_\+cpp/\+UML\+\_\+\+C-\//\+MAZARGUIL/projet\+\_\+uml\+\_\+c++\+\_\+12\+\_\+4\+\_\+2022\+\_\+sucess\+\_\+6/Generateur\+\_\+save.\+cpp\end{DoxyCompactItemize}
