@@ -1,0 +1,33 @@
+\doxysection{Generateur\+\_\+save.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GENERATEUR\_SAVE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GENERATEUR\_SAVE\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}lcarte.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}donnees\_borne.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}memoire\_borne.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}Voyants.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}timer.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}Bouton.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}prise.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}base\_clients.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }Generateur\_save}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} Generateursave\_initialiser();}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} Generateursave\_charge(\textcolor{keywordtype}{int} num\_carte);}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} Generateursave\_generer\_PWM(pwm etat\_pwm);}
+\DoxyCodeLine{23     Voyant voyant;}
+\DoxyCodeLine{24     Timer timer;}
+\DoxyCodeLine{25     Bouton bouton;}
+\DoxyCodeLine{26     Prise prise;}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
