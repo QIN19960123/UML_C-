@@ -2,6 +2,8 @@
 
 entrees *io;
 int shmid;
+
+
 void Voyant::Voyants_initialiser()
 {
 	io=acces_memoire(&shmid);

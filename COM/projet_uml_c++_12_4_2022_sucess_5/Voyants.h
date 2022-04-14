@@ -6,7 +6,6 @@
 #include "memoire_borne.h"
 #include "donnees_borne.h"
 
-
 using namespace std;
 
 class Voyant

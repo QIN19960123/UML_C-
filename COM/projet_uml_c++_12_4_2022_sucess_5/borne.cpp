@@ -13,7 +13,7 @@ int main()
 
   	lecteurcarte.initialiser();
 //  lecteurcarte.LecteurCarte_init();
-
+	cout<<"inserter carte"<<endl;
     while (1)
     {
         lecteurcarte.lire_carte();

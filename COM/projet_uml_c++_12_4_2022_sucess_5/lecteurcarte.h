@@ -10,7 +10,11 @@
 #include <stdio.h>
 
 #include "Voyants.h"
+#include "timer.h"
 #include "Bouton.h"
+#include "prise.h"
+#include "Generateur_save.h"
+
 
 using namespace std;
 
@@ -24,7 +28,10 @@ class LecteurCarte
 	void lire_carte();
 	BDD bdd; 
 	Voyant voyant;
+	Timer timer;
 	Bouton bouton;
+	Prise prise;
+	Generateur_save generateur_save;
 };
 
 #endif // LECTEURCARTE_H
